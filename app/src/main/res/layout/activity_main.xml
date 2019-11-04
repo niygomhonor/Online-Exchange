@@ -8,8 +8,50 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="welcome to ...... Swap!" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="287dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginRight="57dp"
+        android:text="Welcome to ...... Swap!"
+        android:textSize="33dp"
+        android:textStyle="bold"
+        app:fontFamily="@font/allura" />
+
+    <Button
+        android:id="@+id/ViewStore"
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Upload"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginBottom="214dp"
+        android:alpha="0.40"
+        android:background="@drawable/curvey"
+        android:text="View Store"
+
+        android:textColor="#F10303" />
+
+    <Button
+        android:id="@+id/Upload"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="122dp"
+        android:alpha="0.40"
+
+        android:background="@drawable/curvey"
+        android:text="upload"
+        android:textColor="#F10303" />
+
 
 </RelativeLayout>
