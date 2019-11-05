@@ -4,21 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/screen"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="226dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/screen1" />
+
 
     <TextView
         android:id="@+id/welcome"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="287dp"
-        android:layout_marginEnd="57dp"
-        android:layout_marginRight="57dp"
+        android:layout_below="@+id/image"
+        android:background="#889792"
         android:text="Welcome to E-Swap!"
+        android:textColor="#ffffff"
         android:textSize="33dp"
         android:textStyle="bold"
         app:fontFamily="@font/allura" />
@@ -52,6 +55,7 @@
         android:background="@drawable/curvey"
         android:text="upload"
         android:textColor="#F10303" />
+
 
 
 </RelativeLayout>
