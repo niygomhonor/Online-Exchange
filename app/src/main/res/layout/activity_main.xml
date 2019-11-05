@@ -18,7 +18,7 @@
         android:layout_marginTop="287dp"
         android:layout_marginEnd="57dp"
         android:layout_marginRight="57dp"
-        android:text="Welcome to ...... Swap!"
+        android:text="Welcome to E-Swap!"
         android:textSize="33dp"
         android:textStyle="bold"
         app:fontFamily="@font/allura" />
