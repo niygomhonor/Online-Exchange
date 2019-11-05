@@ -4,32 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/secondbg"
+    android:background="@drawable/Screens"
     tools:context=".ViewStoreActivity">
 
-    <LinearLayout
-        android:id="@+id/layout1"
-        android:layout_weight="7"
+<!--    <LinearLayout-->
+<!--        android:id="@+id/layout1"-->
+<!--        android:layout_weight="7"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/image1"-->
+<!--            android:layout_width="199dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:src="@drawable/curvey">-->
+
+<!--        </ImageView>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/image2"-->
+<!--            android:layout_width="175dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:src="@drawable/screen"-->
+<!--            android:layout_marginRight="50dp">-->
+
+<!--        </ImageView>-->
+
+<!--    </LinearLayout>-->
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/image1"
-            android:layout_width="199dp"
-            android:layout_height="100dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/curvey">
-
-        </ImageView>
-
-        <ImageView
-            android:id="@+id/image2"
-            android:layout_width="175dp"
-            android:layout_height="100dp"
-            android:src="@drawable/screen"
-            android:layout_marginRight="50dp">
-
-        </ImageView>
-
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="245dp" />
 </RelativeLayout>
