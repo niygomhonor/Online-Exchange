@@ -16,12 +16,12 @@
         android:id="@+id/linearLayout">
 
         <EditText
-            android:id="@+id/nameEditText"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:hint="Name"
-            android:nextFocusDown="@+id/passwordEditText"
+            android:nextFocusDown="@+id/password"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
@@ -29,13 +29,13 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/emailEditText"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:nextFocusDown="@+id/passwordEditText"
+            android:nextFocusDown="@+id/password"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
@@ -43,13 +43,13 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/passwordEditText"
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:hint="Password"
             android:inputType="textPassword"
-            android:nextFocusDown="@+id/passwordEditText"
+            android:nextFocusDown="@+id/password"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
@@ -57,13 +57,13 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/confirmPasswordEditText"
+            android:id="@+id/verifyPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"
-            android:hint="Confirm Password"
+            android:hint="Verify Password"
             android:inputType="textPassword"
-            android:nextFocusDown="@+id/passwordEditText"
+            android:nextFocusDown="@+id/password"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
@@ -72,7 +72,7 @@
 
 
         <Button
-            android:id="@+id/createUserButton"
+            android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -89,7 +89,7 @@
             android:textStyle="bold"
             android:textSize="15sp"
             android:text="Already have an account? Log in here!"
-            android:id="@+id/loginTextView"
+            android:id="@+id/login"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
