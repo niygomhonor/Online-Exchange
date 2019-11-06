@@ -48,8 +48,8 @@ public class AccessoriesAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.single_accessories, null);
 
         }
-        ImageView accessoriesImageView=(ImageView) convertView.findViewById(R.id.gadgetImage);
-        TextView accessoriesNameView=(TextView) convertView.findViewById(R.id.gadgetName);
+        ImageView accessoriesImageView=(ImageView) convertView.findViewById(R.id.accessoriesImage);
+        TextView accessoriesNameView=(TextView) convertView.findViewById(R.id.accessoriesName);
         accessoriesImageView.setImageResource(accessoriesPics[position]);
         accessoriesNameView.setText(accessoriesNames[position]);
 
