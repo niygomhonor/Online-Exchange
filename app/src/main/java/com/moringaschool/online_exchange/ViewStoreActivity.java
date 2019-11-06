@@ -46,11 +46,11 @@ public class ViewStoreActivity extends AppCompatActivity implements View.OnClick
             Intent ClothesIntent = new Intent(ViewStoreActivity.this, ViewStoreActivity.class);
             startActivity(ClothesIntent);
         }
-//
-//        if(v == card4){
-//            Intent HouseAccIntent = new Intent(ViewStoreActivity.this, ViewStoreActivity.class);
-//            startActivity(HouseAccIntent);
-//        }
+
+        if(v == card4){
+            Intent ShoesIntent = new Intent(ViewStoreActivity.this, ViewStoreActivity.class);
+            startActivity(ShoesIntent);
+        }
 
     }
 }
