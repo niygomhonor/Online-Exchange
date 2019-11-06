@@ -14,15 +14,15 @@
         android:src="@drawable/save" />
 
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:padding="30dp"
-        android:text="We appreciative the your time spent with us and look forward continuing to work on your account."
-        android:textSize="25dp"
-        app:fontFamily="@font/aladin" />
+        android:text="We appreciative the your time spent with us and look forward continuing to work on your account,
+        Warmly, E-Swap!"
+        android:textSize="45dp"
+        app:fontFamily="@font/alex_brush" />
 
     <ImageView
         android:id="@+id/image2"
