@@ -38,17 +38,17 @@ public class ViewStoreActivity extends AppCompatActivity implements View.OnClick
         }
 
         if(v == card2){
-            Intent GadgetsIntent = new Intent(ViewStoreActivity.this, ViewStoreActivity.class);
+            Intent GadgetsIntent = new Intent(ViewStoreActivity.this, ThanksActivity.class);
             startActivity(GadgetsIntent);
         }
 
         if(v == card3){
-            Intent ClothesIntent = new Intent(ViewStoreActivity.this, ViewStoreActivity.class);
+            Intent ClothesIntent = new Intent(ViewStoreActivity.this,clothesActivity.class);
             startActivity(ClothesIntent);
         }
 
         if(v == card4){
-            Intent ShoesIntent = new Intent(ViewStoreActivity.this, ThanksActivity.class);
+            Intent ShoesIntent = new Intent(ViewStoreActivity.this, shoesActivity.class);
             startActivity(ShoesIntent);
         }
 
