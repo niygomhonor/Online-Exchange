@@ -153,10 +153,10 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="140dp"
-                    android:layout_height="100dp"
+                    android:layout_width="124dp"
+                    android:layout_height="80dp"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/screen" />
+                    android:src="@drawable/clothes" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -193,10 +193,10 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="140dp"
-                    android:layout_height="100dp"
+                    android:layout_width="149dp"
+                    android:layout_height="78dp"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/screen" />
+                    android:src="@drawable/shoes" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
