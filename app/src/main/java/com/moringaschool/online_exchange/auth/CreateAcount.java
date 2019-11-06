@@ -6,18 +6,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.moringaschool.online_exchange.MainActivity;
 import com.moringaschool.online_exchange.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 
 public class CreateAcount extends AppCompatActivity implements View.OnClickListener  {
 
@@ -28,14 +35,15 @@ public class CreateAcount extends AppCompatActivity implements View.OnClickListe
 
     private ProgressDialog mAuthProgressDialog;
     private String mNames;
+    public static final String TAG = CreateAcount.class.getSimpleName();
 
-
-    @BindView(R.id.button)Button mButton;
-    @BindView(R.id.name)EditText mName;
+    @BindView(R.id.button) Button mButton;
+    @BindView(R.id.name) EditText mName;
     @BindView(R.id.email) EditText mEmail;
     @BindView(R.id.password) EditText mPassword;
     @BindView(R.id.verifyPassword) EditText mverifyPassword;
     @BindView(R.id.login)TextView mLogin;
+    String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +51,7 @@ public class CreateAcount extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_create_acount);
 
         ButterKnife.bind(this);
-
+        mAuth = FirebaseAuth.getInstance();
         mLogin.setOnClickListener(this);
         mButton.setOnClickListener(this);
 
@@ -75,18 +83,55 @@ public class CreateAcount extends AppCompatActivity implements View.OnClickListe
     }
 
     private void createNewUser() {
-//        mName = mName.getText().toString().trim();
+        userName = mName.getText().toString().trim();
         final String name = mName.getText().toString().trim();
         final String email = mEmail.getText().toString().trim();
         String password = mPassword.getText().toString().trim();
         String confirmPassword = mverifyPassword.getText().toString().trim();
 
-        boolean validName = isValidName(mName);
-        boolean validEmail = isValidEmail(email);
-//            boolean validName = isValidName(name);
-        boolean validPassword = isValidPassword(password, confirmPassword);
-    }
 
+        boolean validEmail = isValidEmail(email);
+            boolean validName = isValidName(name);
+        boolean validPassword = isValidPassword(password, confirmPassword);
+        if (!validEmail || !validName || !validPassword) return;
+
+        mAuthProgressDialog.show();
+
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete( Task<AuthResult> task) {
+                        mAuthProgressDialog.dismiss();
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "Authentication successful");
+
+                            createFirebaseUserProfile(task.getResult().getUser());
+
+                        } else {
+                            Toast.makeText(CreateAcount.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+    private void createFirebaseUserProfile(final FirebaseUser user) {
+
+        UserProfileChangeRequest addProfileName = new UserProfileChangeRequest.Builder()
+                .setDisplayName(userName)
+                .build();
+
+        user.updateProfile(addProfileName)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, user.getDisplayName());
+                        }
+                    }
+
+                });
+    }
     private void createAuthStateListener() {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
 
@@ -115,7 +160,7 @@ public class CreateAcount extends AppCompatActivity implements View.OnClickListe
         return isGoodEmail;
     }
 
-    private boolean isValidName(EditText name) {
+    private boolean isValidName(String name) {
         if (name.equals("")) {
             mName.setError("Please enter your name");
             return false;
@@ -134,6 +179,19 @@ public class CreateAcount extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        mAuth.addAuthStateListener(mAuthListener);
+//    }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+
+    }
 
 }
