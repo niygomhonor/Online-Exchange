@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".shoesActivity">
 
+    <GridView
+        android:id="@+id/gridview1"
+        android:numColumns="2"
+        android:verticalSpacing="1dp"
+        android:horizontalSpacing="1dp"
+        android:gravity="center"
+        android:columnWidth="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></GridView>
 </androidx.constraintlayout.widget.ConstraintLayout>
