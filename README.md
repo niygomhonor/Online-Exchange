@@ -15,6 +15,7 @@ This application was developed for people who like to get new goods without spen
 the application will help the use to exchange the goods with another user that is interested, in other word perform  barter trade.
 
  Features:
+ 
    :iphone: the user will SignUp or Login.
       
    :iphone: the user will SignUp or Login.
