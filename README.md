@@ -75,9 +75,9 @@ the application will help the use to exchange the goods with another user that i
 
 
 ## Technologies Used
-* Java
-*Gradle
-*Android Studio
+   * Java
+   *Gradle
+   *Android Studio
  
 ## Support and contact details
 If you any issues or have questions, ideas or concerns contact us on chelseasabinesangwa@gmail.com.
