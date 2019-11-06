@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewStoreActivity"></activity>
+        <activity android:name=".ViewStoreActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moringaschool.online_exchange.MainActivity" />
+        </activity>
         <activity android:name=".MainActivity"
                   android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
