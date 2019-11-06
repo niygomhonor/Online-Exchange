@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <relativelayout
+        android:id="@+id/gridviewdata"
+        android:layout_width="190dp"
+        android:background="#fff"
+        android:layout_height="180dp">
+
+
+        <textview
+            android:id="@+id/fruits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignparentbottom="true"
+            android:layout_centerhorizontal="true"
+            android:text="Apple"
+            android:textstyle="normal|italic"
+            android:textsize="25dp">
+
+            <imageview
+                android:id="@+id/images"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerhorizontal="true"
+                android:layout_centervertical="true"
+                android:src="@drawable/">
+            </imageview>
+
+         </textview>
+    </relativelayout>
+
+</RelativeLayout>
