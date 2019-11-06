@@ -23,10 +23,10 @@ public class ViewStoreActivity extends AppCompatActivity implements View.OnClick
         card3 = findViewById( R.id.card3 );
         card4 = findViewById( R.id.card4 );
 
-//        card1.setOnClickListener( this );
-//        card2.setOnClickListener( this );
-//        card3.setOnClickListener( this );
-//        card4.setOnClickListener( this );
+        card1.setOnClickListener( this );
+        card2.setOnClickListener( this );
+        card3.setOnClickListener( this );
+        card4.setOnClickListener( this );
 
     }
 
