@@ -11,7 +11,13 @@
 
 ## Description
 
-This is an app that helps the user encrypt the message using ceaser cliper method.
+This application was developed for people who like to get new goods without spending much time ordering and later complains about what they bought.
+the application will help the use to exchange the goods with another user that is interested, in other word perform  barter trade.
+
+ Features:
+      ::iphone: the user will SignUp or Login.
+        
+the user got to upload the item s/he wants to exchange and the interested will contact him with details of the item to exchange with and when the agrees on the terms they get to exchange their respective items.
 
 ## BDD
 
