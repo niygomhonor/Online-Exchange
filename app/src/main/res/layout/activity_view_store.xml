@@ -82,7 +82,8 @@
                             android:layout_marginTop="15dp"
                             android:layout_marginLeft="20dp"
                             android:textSize="20dp"
-                            android:layout_alignParentRight="true"/>
+                            android:layout_alignParentRight="true"
+                            app:fontFamily="@font/aladin"/>
                     </LinearLayout>
                 </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -124,7 +125,8 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="20dp"
                     android:textSize="25dp"
-                    android:layout_alignParentRight="true"/>
+                    android:layout_alignParentRight="true"
+                    app:fontFamily="@font/aladin"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -161,10 +163,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="35dp"
                     android:textSize="25dp"
                     android:text="Clothes"
-                    android:layout_alignParentRight="true"/>
+                    android:layout_alignParentRight="true"
+                    app:fontFamily="@font/aladin"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -204,7 +207,8 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="20dp"
                     android:textSize="25dp"
-                    android:layout_alignParentRight="true"/>
+                    android:layout_alignParentRight="true"
+                    app:fontFamily="@font/aladin"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
