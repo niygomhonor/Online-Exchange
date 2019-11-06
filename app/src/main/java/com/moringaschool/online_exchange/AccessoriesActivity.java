@@ -23,4 +23,6 @@ public class AccessoriesActivity extends AppCompatActivity {
 
         accessoriesGridView.setAdapter(accessoriesAdapter);
     }
+
+
 }
