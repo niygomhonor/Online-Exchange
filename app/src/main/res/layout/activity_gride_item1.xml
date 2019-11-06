@@ -20,5 +20,5 @@
         android:layout_below="@+id/imageView"
         android:text="clothes"
         android:textColor="#000"
-        android:textSize="30dp"/>
+        android:textSize="20dp"/>
 </RelativeLayout>
