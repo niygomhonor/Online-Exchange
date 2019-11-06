@@ -16,10 +16,15 @@ the application will help the use to exchange the goods with another user that i
 
  Features:
       :iphone: the user will SignUp or Login.
+      
       :iphone: the user will SignUp or Login.
-      :iphone: choose from View store or upload  pictures or view user profile to bargain with them. 
+      
+      :iphone: choose from View store or upload  pictures or view user profile to bargain with them.
+       
       :iphone: if it is view store, the user choose from home accesories, Gadgets, clothes or shoes to view things we have in the store.
+      
       :iphone: if it is upload, the user will see a form to fillin information.
+      
       :iphone: if it is User Profile, he will see all the user we have and decide which to talk to and trade with.
               
         
