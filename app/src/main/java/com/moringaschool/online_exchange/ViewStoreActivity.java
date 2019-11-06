@@ -32,11 +32,11 @@ public class ViewStoreActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-//        if(v == card1){
-//            Intent HouseAccIntent = new Intent(ViewStoreActivity.this, ViewStoreActivity.class);
-//            startActivity(HouseAccIntent);
-//        }
-//
+        if(v == card1){
+            Intent HouseAccIntent = new Intent(ViewStoreActivity.this, ViewStoreActivity.class);
+            startActivity(HouseAccIntent);
+        }
+
 //        if(v == card2){
 //            Intent Gadgetsntent = new Intent(ViewStoreActivity.this, ViewStoreActivity.class);
 //            startActivity(HouseAccIntent);
