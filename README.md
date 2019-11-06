@@ -2,7 +2,7 @@
 
 ## By:
     *-Muyenzi Raissa*
-    *- Kimbagira Sylivie*
+    *-Kimbagira Sylivie*
     *-Niyonkuru Honorine*
     *-Sangwa Sabine Chelsea*
     *-Karambizi Amandine Gloria*
@@ -28,8 +28,6 @@ the application will help the use to exchange the goods with another user that i
       
    :iphone: if it is User Profile, he will see all the user we have and decide which to talk to and trade with.
               
-        
-the user got to upload the item s/he wants to exchange and the interested will contact him with details of the item to exchange with and when the agrees on the terms they get to exchange their respective items.
 
 ## BDD
 
@@ -63,21 +61,27 @@ the user got to upload the item s/he wants to exchange and the interested will c
     Output Example: "hello word"
  
  **Here are some screenshots from the project**
- ![App.java](src/app.png)
- ![CaesarCipher.java](src/cae.png)
- ![Decrption.java](src/dec.png)
+
     
 ## Known Bugs
-This webpage is not suitable for all screen sizes.
+
+ :bug:This webpage is not suitable for all screen sizes.
+ :bug:Can submit empty or invalid input. 
+ :bug: User can not delete entry.
+ :bug: User can not update entry.
+
 
 ## Technologies Used
-* HTML
-* CSS
-* Bootstrap
 * Java
+*Gradle
+*Android Studio
  
 ## Support and contact details
 If you any issues or have questions, ideas or concerns contact us on chelseasabinesangwa@gmail.com.
 
 ### License
-MIT Copyright (c) 2019 Sangwa Sabine Chelsea. #Ceasar_Cliper 
+MIT License Copyright (c) 2019. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+MIT Copyright (c) 2019    -Muyenzi Raissa; -Kimbagira Sylivie; -Niyonkuru Honorine; -Sangwa Sabine Chelsea; -Karambizi Amandine Gloria  # E-Swap.
