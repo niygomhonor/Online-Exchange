@@ -14,7 +14,7 @@
 This application was developed for people who like to get new goods without spending much time ordering and later complains about what they bought.
 the application will help the use to exchange the goods with another user that is interested, in other word perform  barter trade.
 
- Features:
+ **Features:**
  
    :iphone: the user will SignUp or Login.
       
