@@ -16,4 +16,12 @@
         android:textSize="25dp"
         app:fontFamily="@font/aladin" />
 
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/save" />
+
+
 </RelativeLayout>
