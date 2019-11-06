@@ -1,11 +1,13 @@
 # Online-Exchange
 
-## *By:* 
+## By:
+    *-Muyenzi Raissa*
+    *- Kimbagira Sylivie*
+    *-Niyonkuru Honorine*
     *-Sangwa Sabine Chelsea*
     *-Karambizi Amandine Gloria*
-    *-Niyonkuru Honorine*
-    *- Kimbagira Sylivie*
-    *-Muyenzi Raissa*
+
+   
 
 ## Description
 
