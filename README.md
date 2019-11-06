@@ -31,34 +31,26 @@ the application will help the use to exchange the goods with another user that i
 
 ## BDD
 
-**The program should ask the user what task she want to execute.**
+**The program should allow the user to SignUp.**
 
-    System: "Would like to Encrypt or Decrypt a message"
+     Input Example: "Name: Sangwa"
+                    "Email: sangwa12@gmail.com"
+                    "Password: ********"
+                    "Confirm Password: ********"
 
-**The program should accept input from the user.**
+**The program should allow the user to Login.**
 
-    System: "Would like to Encrypt or Decrypt a message"
-    Input Example: Message: "Encrypt"
+    Input Example: "Email: sangwa12@gmail.com"
+                   "Password: ********"
 
-**The program should return when the user enter a message to be Encrpted** 
+**The program should allow the user Inputs** 
 
-    System: "Would like to Encrypt or Decrypt a message"
-    Input Example: Message: "Encrypt"
-    System: " Write your message here ...."
-    Input Example:  Message: "hello word"
-    Sytem: "Write a shift value......"
-    Input Example:2
-    Output Example:  jgnnqyqtnf
+    Input Example: " Type of Object: "Shoes"
+                   "Brand: Nike"
+                   "the Uploader Name: "Sangwa"
     
 **The program should return when the user enter a message to be Decrypted** 
 
-    System: "Would like to Encrypt or Decrypt a message"
-    Input Example: Message: "Decrypt"
-    System: " Write your message here ...."
-    Input Example: "jgnnqyqtnf"
-    Sytem: "Write a shift value......"
-    Input Example: 2
-    Output Example: "hello word"
  
  **Here are some screenshots from the project**
 
