@@ -29,29 +29,28 @@ public class GadgetsAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return gadgetsName[position];
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
         if (convertView == null) {
 
-            view = new View(context);
-            view = layoutInflater.inflate(R.layout.single_gadget, null);
-            ImageView gadgetImageView=(ImageView) view.findViewById(R.id.gadgetImage);
-            TextView gadgetNameView=(TextView) view.findViewById(R.id.gadgetName);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.single_gadget, null);
+
+        }
+            ImageView gadgetImageView=(ImageView) convertView.findViewById(R.id.gadgetImage);
+            TextView gadgetNameView=(TextView) convertView.findViewById(R.id.gadgetName);
             gadgetImageView.setImageResource(gadgetsPics[position]);
             gadgetNameView.setText(gadgetsName[position]);
-        }
 
-        return view;
+        return convertView;
     }
 }
