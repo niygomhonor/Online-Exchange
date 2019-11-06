@@ -10,14 +10,15 @@
         android:id="@+id/store"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#9FB3AC"
+        android:layout_marginTop="30dp"
         android:paddingLeft="100dp"
-        android:text="The Sale of Sales!"
+        android:text="Shop by category!"
         android:textColor="#180707"
         android:textSize="22dp"
         android:textStyle="bold"
         app:fontFamily="@font/aladin"
         android:layout_weight="2"
+
         />
 
 <!--    <LinearLayout-->
@@ -50,18 +51,41 @@
         android:layout_width="match_parent"
         android:layout_height="173dp"
         android:layout_below="@+id/store"
-        android:layout_weight="8">
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="8"
+        app:cardBackgroundColor="#006FCEA1">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="173dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="162dp"
-            android:background="@drawable/curvey">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical">
 
-        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="140dp"
+                            android:layout_height="100dp"
+                            android:layout_alignParentLeft="true"
+                            android:src="@drawable/screen" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Family"
+                            android:layout_alignParentRight="true"/>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 
