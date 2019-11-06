@@ -15,7 +15,12 @@ This application was developed for people who like to get new goods without spen
 the application will help the use to exchange the goods with another user that is interested, in other word perform  barter trade.
 
  Features:
-      ::iphone: the user will SignUp or Login.
+ 
+      :iphone: the user will SignUp or Login.
+      :iphone: choose from View store or upload  pictures or view user profile to bargain with them. 
+      :iphone: if it is view store, the user choose from home accesories, Gadgets, clothes or shoes to view things we have in the store.
+      :iphone: if it is upload, the user will see a form to fillin information.
+      :iphone: if it is User Profile, he will see all the user we have and decide which to talk to and trade with.
         
 the user got to upload the item s/he wants to exchange and the interested will contact him with details of the item to exchange with and when the agrees on the terms they get to exchange their respective items.
 
