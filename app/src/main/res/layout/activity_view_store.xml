@@ -4,8 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/screens"
     tools:context=".ViewStoreActivity">
+
+    <TextView
+        android:id="@+id/store"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9FB3AC"
+        android:paddingLeft="100dp"
+        android:text="The Sale of Sales!"
+        android:textColor="#180707"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:fontFamily="@font/aladin"
+        android:layout_weight="2"
+        />
 
 <!--    <LinearLayout-->
 <!--        android:id="@+id/layout1"-->
@@ -35,7 +48,21 @@
 
 <!--    <androidx.cardview.widget.CardView-->
 <!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_marginTop="245dp" />-->
+<!--        android:layout_height="173dp"-->
+<!--        android:layout_below="@+id/store"-->
+<!--        android:layout_weight="8">-->
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="173dp"-->
+<!--            android:layout_marginEnd="0dp"-->
+<!--            android:layout_marginRight="0dp"-->
+<!--            android:layout_marginBottom="162dp"-->
+<!--            android:background="@drawable/curvey">-->
+
+<!--        </LinearLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+
 </RelativeLayout>
