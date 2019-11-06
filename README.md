@@ -66,8 +66,11 @@ the application will help the use to exchange the goods with another user that i
 ## Known Bugs
 
  :bug:This webpage is not suitable for all screen sizes.
+ 
  :bug:Can submit empty or invalid input. 
+ 
  :bug: User can not delete entry.
+ 
  :bug: User can not update entry.
 
 
