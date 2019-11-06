@@ -74,11 +74,11 @@
                             android:layout_width="140dp"
                             android:layout_height="100dp"
                             android:layout_alignParentLeft="true"
-                            android:src="@drawable/screen" />
+                            android:src="@drawable/house" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Home Instruments"
+                            android:text="House Accessories"
                             android:layout_marginTop="15dp"
                             android:layout_marginLeft="20dp"
                             android:textSize="20dp"
