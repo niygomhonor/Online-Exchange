@@ -1,8 +1,9 @@
 package com.moringaschool.online_exchange.Model;
 
 public class ChatModel {
-    String message;
-    boolean isSend;
+
+   public String message;
+   public boolean isSend;
 
     public ChatModel(String message, boolean isSend) {
         this.message = message;

@@ -1,6 +1,7 @@
 package com.moringaschool.online_exchange.Model;
 
 public class BargainModel {
+   ;
     String response;
     String id;
     int result;
