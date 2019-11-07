@@ -12,8 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".clothesActivity" />
-        <activity android:name=".shoesActivity"/>
+        <activity android:name=".clothesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moringaschool.online_exchange.ViewStoreActivity" />
+        </activity>
+        <activity android:name=".shoesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moringaschool.online_exchange.ViewStoreActivity" />
+        </activity>
         <activity android:name=".ThanksActivity"/>
 
         <activity android:name=".ViewStoreActivity">
