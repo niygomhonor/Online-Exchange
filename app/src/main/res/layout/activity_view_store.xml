@@ -61,7 +61,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp"
                     android:text="House Accessories"
-                    android:textSize="20dp"
+                    android:textSize="25dp"
                     />
             </LinearLayout>
         </LinearLayout>
