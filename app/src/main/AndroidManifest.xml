@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".AccessoriesActivity">
+
+        </activity>
+        <activity android:name=".GadgetsActivity">
+
+
         <activity android:name=".clothesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -34,6 +40,7 @@
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,6 +49,8 @@
 
 
         </activity>
+
+        <activity android:name=".MainActivity" />
 
 
         <meta-data
