@@ -10,7 +10,7 @@ public class AccessoriesActivity extends AppCompatActivity {
     GridView accessoriesGridView;
 
     String[] accessoriesNames ={ "Decoor","Decor","Decor","Decor","Decor","Decor","Decor","Decor"};
-    int[]    accessoriesPics={ R.drawable.hom1,R.drawable.hom2,R.drawable.hom3,R.drawable.hom4,R.drawable.hom5,R.drawable.home6,R.drawable.hom7,R.drawable.hom8};
+    int[]    accessoriesPics={ R.drawable.hom1,R.drawable.hom4,R.drawable.hom5,R.drawable.hom6,R.drawable.hom7,R.drawable.home8,R.drawable.hom8,R.drawable.hom9};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,22 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/image2"
-        android:layout_width="match_parent"
-        android:layout_height="76dp"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/ima" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="Gadgets"
         android:textColor="#000000"
-        android:textSize="25sp"
+        android:textSize="35sp"
         android:textStyle="bold"
         android:typeface="normal"
         app:fontFamily="@font/aguafina_script" />
@@ -30,7 +24,8 @@
         android:gravity="center"
         android:columnWidth="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="8dp"
         android:numColumns="2" />
 
 
