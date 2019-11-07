@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".clothesActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Clothes"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:fontFamily="@font/aladin" />
+
 <GridView
     android:id="@+id/gridview"
     android:numColumns="2"
@@ -14,5 +27,7 @@
     android:gravity="center"
     android:columnWidth="100dp"
     android:layout_width="match_parent"
+    android:layout_marginTop="55dp"
+    android:layout_marginBottom="8dp"
     android:layout_height="wrap_content"></GridView>
 </RelativeLayout>

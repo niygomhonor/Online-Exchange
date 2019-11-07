@@ -13,9 +13,16 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".AccessoriesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moringaschool.online_exchange.ViewStoreActivity" />
 
         </activity>
         <activity android:name=".GadgetsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moringaschool.online_exchange.ViewStoreActivity" />
+        </activity>
 
 
         <activity android:name=".clothesActivity">
@@ -50,7 +57,6 @@
 
         </activity>
 
-        <activity android:name=".MainActivity" />
 
 
         <meta-data

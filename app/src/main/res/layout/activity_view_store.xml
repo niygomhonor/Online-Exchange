@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".ViewStoreActivity">
 
     <TextView
@@ -40,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:background="#ffff"
+            android:background="@drawable/bg"
             android:orientation="vertical">
 
             <LinearLayout
@@ -61,7 +62,7 @@
                     android:layout_marginTop="15dp"
                     android:text="House Accessories"
                     android:textSize="20dp"
-                    app:fontFamily="@font/aladin" />
+                    />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -85,7 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="93dp"
             android:layout_margin="3dp"
-            android:background="#ffff"
+            android:background="@drawable/bg"
             android:orientation="vertical">
 
             <LinearLayout
@@ -93,8 +94,9 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="65dp"
+                    android:layout_width="126dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_alignParentLeft="true"
                     android:src="@drawable/gadgets" />
 
@@ -105,8 +107,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:text="Gadgets"
-                    android:textSize="25dp"
-                    app:fontFamily="@font/aladin" />
+                    android:textSize="25dp" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -129,7 +130,7 @@
             android:layout_width="match_parent"
             android:layout_height="93dp"
             android:layout_margin="3dp"
-            android:background="#ffff"
+            android:background="@drawable/bg"
             android:orientation="vertical">
 
             <LinearLayout
@@ -137,8 +138,9 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="124dp"
-                    android:layout_height="80dp"
+                    android:layout_width="120dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_alignParentLeft="true"
                     android:src="@drawable/clothes" />
 
@@ -149,8 +151,7 @@
                     android:layout_marginLeft="35dp"
                     android:layout_marginTop="20dp"
                     android:text="Clothes"
-                    android:textSize="25dp"
-                    app:fontFamily="@font/aladin" />
+                    android:textSize="25dp" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -178,14 +179,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#ffff"
+                android:background="@drawable/bg"
                 >
 
                 <ImageView
-                    android:layout_width="149dp"
-                    android:layout_height="78dp"
+                    android:layout_width="137dp"
+                    android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/shoes" />
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/shoes2" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -193,8 +196,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="20dp"
                     android:textSize="25dp"
-                    android:layout_alignParentRight="true"
-                    app:fontFamily="@font/aladin"/>
+                    android:layout_alignParentRight="true" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

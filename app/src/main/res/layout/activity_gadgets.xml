@@ -16,7 +16,7 @@
         android:textSize="35sp"
         android:textStyle="bold"
         android:typeface="normal"
-        app:fontFamily="@font/aguafina_script" />
+        app:fontFamily="@font/aladin" />
 
     <GridView
         android:id="@+id/gadgetsgrid"

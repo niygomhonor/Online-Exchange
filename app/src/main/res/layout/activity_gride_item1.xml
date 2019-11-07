@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/imageView1"
         android:text="clothes"
         android:textColor="#000"
         android:textSize="20dp"/>
