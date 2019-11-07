@@ -8,8 +8,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginLeft="60dp"
         android:scaleType="centerCrop" />
@@ -35,12 +36,13 @@
         android:layout_height="wrap_content"
         android:background="@android:color/white"
         android:hint="object"
-        android:layout_below="@+id/userName"
         android:padding="10dp"
+        android:layout_below="@+id/userName"
+        android:layout_marginBottom="10dp"
         android:textColor="@android:color/black"
         android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        tools:ignore="UnknownId" />
+        android:textSize="20sp"/>
+
     <EditText
         android:id="@+id/userBrand"
         android:layout_width="match_parent"
@@ -48,13 +50,11 @@
         android:background="@android:color/white"
         android:hint="Brand"
         android:layout_below="@+id/password"
-        android:inputType="textPassword"
-        android:nextFocusDown="@+id/password"
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textColorHint="@color/colorPrimaryDark"
         android:textSize="20sp"
-        tools:ignore="UnknownId" />
+       />
 
 
     <Button
@@ -72,7 +72,20 @@
         android:id="@+id/usersList"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_alignParentBottom="true"/>
+        android:layout_below="@id/toBargain"
+        android:layout_marginTop="400dp"
+        />
+
+
+    <Button
+        android:id="@+id/toBargain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Navigate"
+
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent" />
 
 
 </RelativeLayout>

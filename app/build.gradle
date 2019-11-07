@@ -44,6 +44,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.annotation:annotation:1.0.2'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'com.google.firebase:firebase-storage:16.0.4'
     annotationProcessor 'org.parceler:parceler:1.1.12'
     testImplementation 'junit:junit:4.12'
     //Robolectric dependencies
@@ -61,4 +62,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.1.0'
 
     implementation 'com.firebaseui:firebase-ui-database:3.3.1'
+
 }

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,7 +25,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.moringaschool.online_exchange.BargainingChat;
 import com.moringaschool.online_exchange.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserUpload extends AppCompatActivity {
     public static final String TAG = UserUpload.class.getSimpleName();
@@ -38,30 +43,15 @@ public class UserUpload extends AppCompatActivity {
     String name;
     String object;
     int objImage;
+    Button navgateToBargain;
     DatabaseReference databaseSwap;
     ListView userList;
+
+    List<Users> ourUsers= new ArrayList<>();
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        databaseSwap.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot userSnap:dataSnapshot.getChildren()){
-
-                    Users users=userSnap.getValue(Users.class);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +64,7 @@ databaseSwap= FirebaseDatabase.getInstance().getReference("users");
         userObjectNaame=findViewById(R.id.password);
 saveDetails=findViewById(R.id.saveButton);
 userList=findViewById(R.id.usersList);
+navgateToBargain=findViewById(R.id.toBargain);
 
 saveDetails.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -81,22 +72,55 @@ saveDetails.setOnClickListener(new View.OnClickListener() {
 addUserInfo();
     }
 });
+navgateToBargain.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent=new Intent(UserUpload.this, BargainingChat.class);
+        startActivity(intent);
+
+
+    }
+});
 
 
 
 
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        databaseSwap.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                ourUsers.clear();;
+                for (DataSnapshot userSnap:dataSnapshot.getChildren()){
 
+                    Users users=userSnap.getValue(Users.class);
+                    ourUsers.add(users);
+                }
+                OurUsers adapter=new OurUsers(UserUpload.this,ourUsers);
+                userList.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+
+
+        });
+    }
 private  void addUserInfo(){
 
     brand=userBrand.getText().toString();
     name=userName.getText().toString();
     object=userObjectNaame.getText().toString();
-    objImage=objectImage.getVisibility();
+//    objImage=objectImage.getVisibility();
+
 if(!TextUtils.isEmpty(name)){
 
 String id= databaseSwap.push().getKey();
-Users users=new Users(id,object,brand,name,objImage);
+Users users=new Users(id,object,brand,name);
 databaseSwap.child(id).setValue(users);
 
     Toast.makeText(this, "User added", Toast.LENGTH_SHORT).show();

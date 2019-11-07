@@ -1,5 +1,7 @@
 package com.moringaschool.online_exchange.auth;
 
+
+
 public class Users {
     String userId;
     String userObject;
@@ -7,12 +9,17 @@ public class Users {
     String UserName;
     int imageObj;
 
-    public Users(String userId, String userObject, String userBrand, String userName,   int imageObj) {
+    public Users(){
+
+    }
+
+
+    public Users(String userId, String userObject, String userBrand, String userName) {
         this.userId = userId;
         this.userObject = userObject;
         UserBrand = userBrand;
         UserName = userName;
-        this.imageObj=imageObj;
+
     }
 
     public String getUserId() {
@@ -29,5 +36,25 @@ public class Users {
 
     public String getUserName() {
         return UserName;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public void setUserObject(String userObject) {
+        this.userObject = userObject;
+    }
+
+    public void setUserBrand(String userBrand) {
+        UserBrand = userBrand;
+    }
+
+    public void setUserName(String userName) {
+        UserName = userName;
+    }
+
+    public void setImageObj(int imageObj) {
+        this.imageObj = imageObj;
     }
 }
