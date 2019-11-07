@@ -42,7 +42,7 @@ btn_send_message.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
         String text=myMsg.getText().toString();
-        ChatModel model=
+        ChatModel model=new ChatModel(text,true);
     }
 });
 
