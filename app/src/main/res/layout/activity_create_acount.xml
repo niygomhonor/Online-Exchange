@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/color"
     tools:context=".auth.CreateAcount">
 
     <LinearLayout
@@ -19,10 +20,10 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
             android:hint="Name"
             android:nextFocusDown="@+id/password"
             android:padding="10dp"
+            android:background="@drawable/corner"
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorPrimaryDark"
@@ -32,7 +33,7 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
+            android:background="@drawable/corner"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:nextFocusDown="@+id/password"
@@ -46,7 +47,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
+            android:background="@drawable/corner"
             android:hint="Password"
             android:inputType="textPassword"
             android:nextFocusDown="@+id/password"
@@ -60,7 +61,7 @@
             android:id="@+id/verifyPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
+            android:background="@drawable/corner"
             android:hint="Verify Password"
             android:inputType="textPassword"
             android:nextFocusDown="@+id/password"
@@ -77,7 +78,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Sign up"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/gradcolor"
             android:layout_marginTop="15dp"
             android:textColor="@color/colorAccent" />
 
@@ -102,6 +103,15 @@
         android:textSize="30dp"
         android:textStyle="bold"
         android:layout_above="@+id/linearLayout"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        app:fontFamily="@font/aladin" />
+
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/save" />
 
 </RelativeLayout>

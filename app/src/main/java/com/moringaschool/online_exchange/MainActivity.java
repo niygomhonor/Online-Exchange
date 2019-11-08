@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button ViewStoreButton;
     private Button UploadButton;
-    private Button UserBotton;
+    private Button UserButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +21,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         ViewStoreButton = findViewById( R.id.ViewStore );
+        UploadButton=findViewById(R.id.Upload);
+        UserButton=findViewById(R.id.User);
         ViewStoreButton.setOnClickListener( this );
         UploadButton.setOnClickListener(this);
+        UserButton.setOnClickListener(this);
     }
 
     @Override
@@ -34,8 +37,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v== UploadButton){
             Intent uploadIntent = new Intent(MainActivity.this, UserUpload.class);
             startActivity(uploadIntent);
+        }
+        if (v==UserButton ){
+            Intent ViewStoreIntent = new Intent(MainActivity.this, UsersList.class);
+            startActivity(ViewStoreIntent);
 
+        }
         }
 
     }
-}
+

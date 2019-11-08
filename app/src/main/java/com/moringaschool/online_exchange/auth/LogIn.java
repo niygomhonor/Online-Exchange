@@ -142,11 +142,11 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
                 });
     }
 
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        mAuth.addAuthStateListener(mAuthListener);
-//    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
 
     @Override
     public void onStop() {

@@ -3,16 +3,20 @@ package com.moringaschool.online_exchange.auth;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -35,6 +39,7 @@ import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.moringaschool.online_exchange.BargainingChat;
 import com.moringaschool.online_exchange.R;
+import com.moringaschool.online_exchange.UsersList;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -64,6 +69,7 @@ public class UserUpload extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private StorageTask uploadTask;
+    private CardView cardUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,12 +82,13 @@ public class UserUpload extends AppCompatActivity {
         userObjectNaame = findViewById(R.id.password);
         saveDetails = findViewById(R.id.saveButton);
         userList = findViewById(R.id.usersList);
-        navgateToBargain = findViewById(R.id.toBargain);
+//        navgateToBargain = findViewById(R.id.toBargain);
         objectImage = findViewById(R.id.imageView);
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("ObjectImages");
         mStorageRef = FirebaseStorage.getInstance().getReference("ObjectImages");
         upLoadPicture = findViewById(R.id.fabSend);
         chooseFile = findViewById(R.id.chooseImage);
+        cardUser = findViewById(R.id.card1);
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(FirebaseAuth firebaseAuth) {
@@ -95,16 +102,27 @@ public class UserUpload extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 addUserInfo();
-            }
-        });
-
-        navgateToBargain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(UserUpload.this, BargainingChat.class);
+                Intent intent = new Intent(UserUpload.this, UsersList.class);
                 startActivity(intent);
             }
         });
+
+        userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setData(Uri.parse("mailto:"));
+                String[] to = {"muyenziraissa@gmail.com", ""};
+                intent.putExtra(Intent.EXTRA_EMAIL, to);
+                intent.putExtra(Intent.EXTRA_SUBJECT, "subject to your app");
+                intent.putExtra(Intent.EXTRA_TEXT, "text inside email");
+                intent.setType("message/rfc822");
+                Intent chooser = Intent.createChooser(intent, "Send email");
+                startActivity(chooser);
+            }
+
+        });
+
 
         chooseFile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -206,14 +224,16 @@ public class UserUpload extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ourUsers.clear();
-                ;
+
                 for (DataSnapshot userSnap : dataSnapshot.getChildren()) {
 
                     Users users = userSnap.getValue(Users.class);
                     ourUsers.add(users);
                 }
-                OurUsers adapter = new OurUsers(UserUpload.this, ourUsers);
-                userList.setAdapter(adapter);
+//                OurUsers adapter = new OurUsers(UserUpload.this, ourUsers);
+//
+//                userList.setAdapter(adapter);
+
             }
 
             @Override

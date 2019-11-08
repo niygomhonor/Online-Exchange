@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moringaschool.online_exchange">
 
-<uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,75 +13,65 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
+        <activity android:name=".UsersList"></activity>
         <activity android:name=".AccessoriesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.moringaschool.online_exchange.ViewStoreActivity" />
-
         </activity>
-      
         <activity android:name=".GadgetsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.moringaschool.online_exchange.ViewStoreActivity" />
         </activity>
-
-
         <activity android:name=".clothesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.moringaschool.online_exchange.ViewStoreActivity" />
         </activity>
-      
         <activity android:name=".shoesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.moringaschool.online_exchange.ViewStoreActivity" />
         </activity>
-      
-        <activity android:name=".ThanksActivity"/>
-
+        <activity android:name=".ThanksActivity" />
         <activity android:name=".ViewStoreActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.moringaschool.online_exchange.MainActivity" />
         </activity>
-      
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
-
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".BargainingChat"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moringaschool.online_exchange.ViewStoreActivity" />
         </activity>
-      
-        <activity android:name=".auth.UserUpload" />
-          
+        <activity android:name=".auth.UserUpload">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moringaschool.online_exchange.ViewStoreActivity"/>
+        </activity>
         <activity android:name=".auth.LogIn">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".auth.CreateAcount" />
-      
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.moringaschool.online_exchange.MainActivity" />
-
-
     </application>
 
 </manifest>
