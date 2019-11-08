@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.moringaschool.online_exchange.auth.UserUpload;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button ViewStoreButton;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ViewStoreButton = findViewById( R.id.ViewStore );
         ViewStoreButton.setOnClickListener( this );
+        UploadButton.setOnClickListener(this);
     }
 
     @Override
@@ -27,6 +30,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(v == ViewStoreButton) {
             Intent ViewStoreIntent = new Intent(MainActivity.this, ViewStoreActivity.class);
             startActivity(ViewStoreIntent);
+        }
+        if (v== UploadButton){
+            Intent uploadIntent = new Intent(MainActivity.this, UserUpload.class);
+            startActivity(uploadIntent);
+
         }
 
     }
