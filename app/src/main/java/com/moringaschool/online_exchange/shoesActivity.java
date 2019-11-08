@@ -2,7 +2,11 @@ package com.moringaschool.online_exchange;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 public class shoesActivity extends AppCompatActivity {
@@ -17,5 +21,20 @@ public class shoesActivity extends AppCompatActivity {
         grideView1 = (GridView) findViewById(R.id.gridview1);
         GridAdapter1 gridAdapter1 = new GridAdapter1(this,values1, images1);
         grideView1.setAdapter(gridAdapter1);
+
+        grideView1.setOnItemClickListener( new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent , View view , int position , long id) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setData( Uri.parse("mailto:"));
+                String[] to = {"sylviekimbagira@gmail.com", ""};
+                intent.putExtra(Intent.EXTRA_EMAIL, to);
+                intent.putExtra(Intent.EXTRA_SUBJECT, "subject to your app");
+                intent.putExtra(Intent.EXTRA_TEXT, "text inside email");
+                intent.setType("message/rfc822");
+                Intent chooser = Intent.createChooser(intent, "Send email");
+                startActivity(chooser);
+            }
+        } );
     }
 }
