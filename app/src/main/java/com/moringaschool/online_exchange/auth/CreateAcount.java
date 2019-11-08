@@ -19,7 +19,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.moringaschool.online_exchange.MainActivity;
+import com.moringaschool.online_exchange.Model.User;
 import com.moringaschool.online_exchange.R;
 
 import butterknife.BindView;
@@ -43,8 +46,8 @@ public class CreateAcount extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.password) EditText mPassword;
     @BindView(R.id.verifyPassword) EditText mverifyPassword;
     @BindView(R.id.login)TextView mLogin;
-    String userName;
-
+   private String userName;
+    DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +57,7 @@ public class CreateAcount extends AppCompatActivity implements View.OnClickListe
         mAuth = FirebaseAuth.getInstance();
         mLogin.setOnClickListener(this);
         mButton.setOnClickListener(this);
-
+        reference = FirebaseDatabase.getInstance().getReference().child("UsersN");
         createAuthStateListener();
         createAuthProgressDialog();
     }
@@ -104,6 +107,26 @@ public class CreateAcount extends AppCompatActivity implements View.OnClickListe
                         mAuthProgressDialog.dismiss();
                         if (task.isSuccessful()) {
                             Log.d(TAG, "Authentication successful");
+//                            FirebaseUser firebaseUser = mAuth.getCurrentUser();
+//                            User u = new User();
+//                            u.setName(name);
+//                            u.setEmail(email);
+//
+//                            reference.child(firebaseUser.getUid()).setValue(u)
+//                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                        @Override
+//                                        public void onComplete(@NonNull Task<Void> task) {
+//                                            if (task.isSuccessful()){
+//                                                Toast.makeText(getApplicationContext(),"Created new account successfully",Toast.LENGTH_SHORT).show();
+//                                                finish();
+//                                                Intent i = new Intent(CreateAcount.this,UserUpload.class);
+//                                                startActivity(i);
+//                                            }
+//                                            else {
+//                                                Toast.makeText(getApplicationContext(),"could not create new account",Toast.LENGTH_SHORT).show();
+//                                            }
+//                                        }
+//                                    });
 
                             createFirebaseUserProfile(task.getResult().getUser());
 
@@ -126,10 +149,12 @@ public class CreateAcount extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Log.d(TAG, user.getDisplayName());
+//                            Log.d(TAG, user.getDisplayName());
+//                            Toast.makeText(CreateAcount.this, "Name is set"+user.getDisplayName(), Toast.LENGTH_SHORT).show();
+                        System.out.println(user.getDisplayName());
                         }
-                    }
 
+                    }
                 });
     }
     private void createAuthStateListener() {
@@ -160,8 +185,8 @@ public class CreateAcount extends AppCompatActivity implements View.OnClickListe
         return isGoodEmail;
     }
 
-    private boolean isValidName(String name) {
-        if (name.equals("")) {
+    private boolean isValidName(String userName) {
+        if (userName.equals("")) {
             mName.setError("Please enter your name");
             return false;
         }

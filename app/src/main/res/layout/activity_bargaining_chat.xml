@@ -16,7 +16,7 @@
     android:layout_alignParentEnd="true"
     android:layout_alignParentRight="true" />
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_above="@+id/fabSend"
         android:id="@+id/userNewMessage"
         android:layout_alignParentTop="true"
@@ -33,16 +33,22 @@
         android:textIsSelectable="true"
         android:layout_alignParentLeft="true" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/userMessage"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="650dp"-->
-<!--        android:width="60dp"-->
 
-<!--        android:overScrollMode="always"-->
-<!--        android:text="TextView"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textIsSelectable="true" />-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:paddingTop="6dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
     <EditText
         android:layout_toLeftOf="@+id/fabSend"
         android:id="@+id/userTypeMessage"
@@ -54,7 +60,8 @@
         android:layout_alignParentBottom="true"
 
         android:drawablePadding="10dp"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        tools:ignore="NotSibling" />
 <!--    <Button-->
 <!--        android:id="@+id/sendMessageButton"-->
 <!--        android:layout_width="wrap_content"-->
@@ -64,4 +71,6 @@
 <!--        android:onClick="sendMessages"-->
 <!--        android:text="Send" />-->
 
+        </LinearLayout>
 </RelativeLayout>
+    </RelativeLayout>

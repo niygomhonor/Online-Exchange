@@ -14,17 +14,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/text_message"
-
             android:layout_toRightOf="@+id/avatar"
-            android:arrowWidth="8dp"
             android:padding="10dp"
-            android:angle="8dp"
             android:textColor="#FFFFFF"
-            android:arrowPosition="14dp"
-            android:arrowLocation="left"
-            android:arrowCenter="true"
             android:background="@color/colorPrimary"
-            android:arrowHeight="10dp"/>
+         />
 
 
     </RelativeLayout>

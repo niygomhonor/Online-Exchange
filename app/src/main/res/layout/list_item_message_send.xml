@@ -11,15 +11,9 @@
     android:layout_height="wrap_content"
     android:id="@+id/text_message"
     android:layout_alignParentRight="true"
-    android:arrowWidth="8dp"
     android:padding="10dp"
-    android:angle="8dp"
     android:textColor="#FFFFFF"
-    android:arrowPosition="14dp"
-    android:arrowLocation="right"
-    android:arrowCenter="true"
-    android:background="@color/colorAccent"
-    android:arrowHeight="10dp"/>
+    android:background="@color/colorAccent" />
 
 
 </RelativeLayout>

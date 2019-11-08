@@ -1,25 +1,34 @@
 package com.moringaschool.online_exchange.auth;
 
 
+import android.net.Uri;
 
 public class Users {
     String userId;
     String userObject;
     String UserBrand;
     String UserName;
-    int imageObj;
+    Uri imageObj;
 
     public Users(){
 
     }
 
 
-    public Users(String userId, String userObject, String userBrand, String userName) {
+    public Users(String userId, String userObject, String userBrand, String userName,Uri imageObj) {
         this.userId = userId;
         this.userObject = userObject;
         UserBrand = userBrand;
         UserName = userName;
+this.imageObj=imageObj;
+    }
 
+    public Uri getImageObj() {
+        return imageObj;
+    }
+
+    public void setImageObj(Uri imageObj) {
+        this.imageObj = imageObj;
     }
 
     public String getUserId() {
@@ -54,7 +63,5 @@ public class Users {
         UserName = userName;
     }
 
-    public void setImageObj(int imageObj) {
-        this.imageObj = imageObj;
-    }
+
 }

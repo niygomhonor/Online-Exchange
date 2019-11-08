@@ -1,89 +1,213 @@
 package com.moringaschool.online_exchange;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toolbar;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.moringaschool.online_exchange.Model.ChatModel;
+import com.moringaschool.online_exchange.Model.AllWays;
+import com.moringaschool.online_exchange.Model.Message;
+import com.moringaschool.online_exchange.Model.User;
+import com.moringaschool.online_exchange.adapter.MessageAdapter;
+import com.moringaschool.online_exchange.auth.LogIn;
+import com.moringaschool.online_exchange.auth.UserUpload;
 
 import java.util.ArrayList;
 import java.util.List;
+public class BargainingChat extends AppCompatActivity implements View.OnClickListener {
 
-public class BargainingChat extends AppCompatActivity {
-
-   ListView listView;
-    private DatabaseReference mydata;
-    EditText myMsg;
-    List<ChatModel> list_chat=new ArrayList<>();
+    FirebaseAuth auth;
+    FirebaseDatabase database;
+    DatabaseReference messageDb;
+    MessageAdapter messageAdapter;
+    User u;
+    List<Message> messages;
+    RecyclerView rvMessage;
+    EditText etMessage;
     FloatingActionButton btn_send_message;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bargaining_chat);
-listView=findViewById(R.id.userNewMessage);
-myMsg=findViewById(R.id.userTypeMessage);
-btn_send_message=findViewById(R.id.fabSend);
-mydata= FirebaseDatabase.getInstance().getReference("Messages");
-
-btn_send_message.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        String text=myMsg.getText().toString();
-        ChatModel model=new ChatModel(text,true);
+        init();
     }
-});
 
+    private void init() {
+        auth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        u = new User();
 
+        rvMessage = (RecyclerView) findViewById(R.id.userNewMessage);
+        etMessage = (EditText) findViewById(R.id.userTypeMessage);
+        btn_send_message =(FloatingActionButton) findViewById(R.id.fabSend);
+        btn_send_message.setOnClickListener(this);
+        messages = new ArrayList<>();
+    }
+            @Override
+            public void onClick(View v) {
+                if (v==btn_send_message){
+                    if(!TextUtils.isEmpty(etMessage.getText().toString())){
+                        Message message = new Message(etMessage.getText().toString(),u.getName());
+                        etMessage.setText("");
+                        messageDb.push().setValue(message);
+                    }
 
+                    else {
 
-
-//        TextView msgTesxt=findViewById(R.id.userMessage);
-
-//mydata.addValueEventListener(new ValueEventListener() {
-//    @Override
-//    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//
-//        String [] messages=dataSnapshot.getValue().toString().split(",");
-//
-//   msgTesxt.setText("");// Clear text
-//
-//        for (int i=0;i<messages.length;i++){
-//
-//           String[] finalMessage=messages[i].split("-");
-//           msgTesxt.append(finalMessage[0]+"\n");
-//        }
-//    }
-//
-//    @Override
-//    public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//        msgTesxt.setText("Cancelled");
-//    }
-//});
-//    }
-//
-//    public void sendMessages(View view){
-//
-//myMsg=findViewById(R.id.userTypeMessage);
-//mydata.child("userMessage").push().setValue(myMsg.getText().toString());
-////mydata.child(Long.toString(System.currentTimeMillis())).setValue(myMsg.getText().toString());
-//myMsg.setText("");
-//        Intent intent=new Intent(BargainingChat.this,ReceiveMsgs.class);
-//        startActivity(intent);
-//
-//
-//    }
+                    Toast.makeText(BargainingChat.this, "You can not send blank message", Toast.LENGTH_SHORT).show();
+                }
+    }
 }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+       getMenuInflater().inflate(R.menu.menu,menu);
+       return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    if (item.getItemId()== R.id.logoutMenu){
+
+logout();
+        return true;
+    }
+return super.onOptionsItemSelected(item);
+    }
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(BargainingChat.this, LogIn.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        final FirebaseUser currentUser= auth.getCurrentUser();
+
+       u.setUid(currentUser.getUid());
+
+        u.setEmail(currentUser.getEmail());
+
+        database.getReference("Users").child(currentUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                u =  dataSnapshot.getValue(User.class);
+
+                u.setUid(currentUser.getUid());
+
+                AllWays.name = u.getName();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        messageDb = database.getReference("messages");
+       messageDb.addChildEventListener(new ChildEventListener() {
+
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Message message = dataSnapshot.getValue(Message.class);
+                message.setKey(dataSnapshot.getKey());
+                messages.add(message);
+                displayMessage(messages);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Message message = dataSnapshot.getValue(Message.class);
+                message.setKey(dataSnapshot.getKey());
+
+                List<Message> newMessages = new ArrayList<Message>();
+                for (Message m: messages){
+                    if (m.getKey().equals(message.getKey())){
+                        newMessages.add(message);
+                    }
+                    else {
+                        newMessages.add(m);
+
+                    }
+                }
+                messages = newMessages;
+
+                displayMessage(messages);
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+                Message message = dataSnapshot.getValue(Message.class);
+                message.setKey(dataSnapshot.getKey());
+                List<Message> newMessages = new ArrayList<Message>();
+
+                for (Message m : messages){
+                    if (!m.getKey().equals(message.getKey())){
+                        newMessages.add(m);
+                    }
+                }
+                messages = newMessages;
+                displayMessage(messages);
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        messages = new ArrayList<>();
+
+    }
+    private void displayMessage(List<Message> messages) {
+      rvMessage.setLayoutManager(new LinearLayoutManager(BargainingChat.this));
+      messageAdapter = new MessageAdapter(BargainingChat.this, messages, messageDb);
+    rvMessage.setAdapter(messageAdapter);
+    }
+}
+
+
+
+
+
+
+
+
+
+

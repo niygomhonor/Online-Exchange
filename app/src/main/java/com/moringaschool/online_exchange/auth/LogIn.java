@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.moringaschool.online_exchange.BargainingChat;
 import com.moringaschool.online_exchange.MainActivity;
 import com.moringaschool.online_exchange.R;
 
@@ -48,7 +49,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         mLogin.setOnClickListener(this);
         mLoginButton.setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
-        createAuthProgressDialog();
+
 
 
 
@@ -88,24 +89,21 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         if (view == mLoginButton) {
             loginWithPassword();
 
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                String uid = user.getUid();
+//                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//                String uid = user.getUid();
+//
+//                DatabaseReference eventRef = FirebaseDatabase
+//                        .getInstance()
+//                        .getReference(FIREBASE_CHILD_DAY).child(uid);
+//                DatabaseReference pushRef = eventRef.push();
+//                String pushId = pushRef.getKey();
+////                dayEvent.setPushId(pushId);
+////                pushRef.setValue(dayEvent);
+////              eventRef.push().setValue(dayEvent);
+//                Toast.makeText(LogIn.this, "HAPPY DAY", Toast.LENGTH_SHORT).show();
+//                System.out.println("Jesus love you");
 
-                DatabaseReference eventRef = FirebaseDatabase
-                        .getInstance()
-                        .getReference(FIREBASE_CHILD_DAY).child(uid);
-                DatabaseReference pushRef = eventRef.push();
-                String pushId = pushRef.getKey();
-//                dayEvent.setPushId(pushId);
-//                pushRef.setValue(dayEvent);
-//              eventRef.push().setValue(dayEvent);
-                Toast.makeText(LogIn.this, "HAPPY DAY", Toast.LENGTH_SHORT).show();
-                System.out.println("Jesus love you");
 
-            Intent intent = new Intent(LogIn.this, UserUpload.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
 
         }
     }
@@ -128,14 +126,14 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         mAuthProgressDialog.dismiss();
-//                        Intent intent = new Intent(LogIn.this, MainActivity.class);
-//                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                        startActivity(intent);
-//                        finish();
+                        Intent intent = new Intent(LogIn.this, UserUpload.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
                         Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
 
                         if (!task.isSuccessful()) {
-
+                            Log.d(TAG, "signInWithEmail" ,task.getException());
                             Toast.makeText(LogIn.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
 
@@ -149,14 +147,14 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 //        super.onStart();
 //        mAuth.addAuthStateListener(mAuthListener);
 //    }
-//
-//    @Override
-//    public void onStop() {
-//        super.onStop();
-//        if (mAuthListener != null) {
-//            mAuth.removeAuthStateListener(mAuthListener);
-//        }
-//    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
 
 
 }
